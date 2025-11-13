@@ -21,6 +21,7 @@ Fue construida utilizando **HTML5**, **CSS3** y **Bootstrap 5**, con el objetivo
 ---
 
 ## 🧩 Estructura del proyecto
+
 Tolkien/
 │
 ├── index.html # Página principal
@@ -49,7 +50,7 @@ Tolkien/
 
 1. **Clona este repositorio:**
    ```bash
-   git clone https://github.com/tu-usuario/tolkien.git
+   git clone https://github.com/mcastilloc/bootstrap.git
 
 
 🧙 Autor
