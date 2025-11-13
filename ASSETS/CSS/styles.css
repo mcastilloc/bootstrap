@@ -1,0 +1,35 @@
+/* Estilos personalizados */
+body {
+    padding-top: 80px;
+    /* espacio para navbar fija */
+    padding-bottom: 60px;
+    /* espacio para footer fijo */
+}
+
+/* HERO centrado verticalmente */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Animación suave al cargar la imagen */
+.hero-image {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 5s ease-in-out;
+}
+
+.hero-image.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer fijo en la parte inferior */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
