@@ -22,8 +22,17 @@ Fue construida utilizando **HTML5**, **CSS3** y **Bootstrap 5**, con el objetivo
 
 ## 🧩 Estructura del proyecto
 
-<pre> ## 🧩 Estructura del proyecto ``` Tolkien/ │ ├── index.html # Página principal ├── ASSETS/ │ ├── CSS/ │ │ └── styles.css # Hoja de estilos personalizada │ └── IMG/ │ └── lotr.jpeg # Imagen usada en el hero └── README.md # Este archivo ``` </pre>
-
+```
+Tolkien/
+│
+├── index.html # Página principal
+├── ASSETS/
+│ ├── CSS/
+│ │ └── styles.css # Hoja de estilos personalizada
+│ └── IMG/
+│ └── lotr.jpeg # Imagen usada en el hero
+└── README.md # Este archivo
+```
 ---
 
 ## 🛠️ Tecnologías utilizadas
