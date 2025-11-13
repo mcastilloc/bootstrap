@@ -10,41 +10,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Fondo general gris piedra */
+        /* Estilos personalizados */
         body {
-            background-color: #262730;
-            /* gris piedra */
             padding-top: 80px;
             /* espacio para navbar fija */
             padding-bottom: 60px;
             /* espacio para footer fijo */
         }
 
-        /* HERO centrado verticalmente (ocupa toda la altura visible) */
+        /* HERO centrado verticalmente */
         .hero-section {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background-color: #19191f;
         }
 
-        /* Navbar personalizada */
-        .navbar-custom {
-            background-color: #212529;
-            /* fondo negro */
+        /* Animación suave al cargar la imagen */
+        .hero-image {
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 5s ease-in-out;
         }
 
-        .navbar-custom .navbar-brand,
-        .navbar-custom .nav-link {
-            color: #ccc;
-            /* texto gris claro */
-        }
-
-        /* Cambia color al pasar el mouse sobre los links */
-        .navbar-custom .nav-link:hover {
-            color: #fff;
+        .hero-image.loaded {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Footer fijo en la parte inferior */
@@ -52,85 +44,80 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            z-index: 1030;
-            /* mismo nivel que la navbar */
         }
     </style>
 </head>
 
-<body>
-
+<body class="bg-dark text-dark">
     <!-- ==================== NAVBAR (fija arriba) ==================== -->
-    <!-- 
-    La clase "navbar-custom" define fondo negro y texto gris claro.
-    "fixed-top" hace que siempre se mantenga visible al hacer scroll.
-  -->
-    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <nav class="navbar bg-dark navbar-expand-lg navbar-custom fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Tolkien</a>
+            <a class="navbar-brand bg-dark text-white fw-bold" href="#">Tolkien</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#Hobbit">El Hobbit</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Anillos">El señor de los Anillos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Legendarium">legendarium</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Poesia">Poesía</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#Hobbit">El Hobbit</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#Anillos">El señor de los Anillos</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#Legendarium">Legendarium</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#Poesia">Poesía</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- ==================== HERO (centrado en pantalla) ==================== -->
-    <!-- 
-    Sección principal tipo "jumbotron" con un llamado a la acción.
-    El texto está centrado y ocupa toda la altura visible del navegador.
-  -->
-    <section class="hero-section text-white">
+    <!-- Alerta informativa -->
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Bienvenido</strong> Sitio dedicado a J.R.R. Tolkien.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <!-- ==================== HERO (centrado en pantalla con imagen) ==================== -->
+    <section class="hero-section bg-dark text-white">
         <div class="container">
+            <!--  Imagen en la parte superior -->
+            <img src="ASSETS/IMG/lotr.jpeg" alt="La comunidad del anillo"
+                class="img-fluid mb-4 rounded shadow hero-image"
+                style="width: 100%; max-width: 1000px; height: auto; object-fit: cover;">
             <h1 class="display-3 fw-bold">J.R.R. Tolkien</h1>
-            <p class="lead mt-3">“No todos los que vagan están perdidos.”</p>
-            <p class="lead mt-3">El Señor de los Anillos: La Comunidad del Anillo</p>
-            <a href="#Hobbit" class="btn btn-light btn-lg mt-4">Comenzar</a>
+            <p class="h5">“No todos los que vagan están perdidos.”</p>
+            <p class="h6">El Señor de los Anillos: La Comunidad del Anillo</p>
+            <a href="#Hobbit" class="btn btn-secondary btn-lg">Comenzar</a>
         </div>
     </section>
 
-    <!-- ==================== SECCIÓN ==================== -->
+    <!-- ==================== SECCIONES ==================== -->
     <section id="Hobbit" class="container my-5">
         <div class="p-5 bg-light rounded-3 shadow">
-            <h2 class="text-primary">El Hobbit</h2>
+            <h2 class="text-secondary">El Hobbit</h2>
             <p>Bilbo Bolsón, un hobbit tranquilo, es arrastrado a una aventura con trece enanos y el mago Gandalf para
                 recuperar un tesoro custodiado por el dragón Smaug. Es una historia de crecimiento personal, ingenio y
                 valor.</p>
-
         </div>
     </section>
 
-    <!-- ==================== SECCIÓN ==================== -->
     <section id="Anillos" class="container my-5">
         <div class="p-5 bg-light rounded-3 shadow">
-            <h2 class="text-success">El señor de los anillos</h2>
-            <h5>La Comunidad del Anillo</h3>
-                <p>Frodo hereda el Anillo Único, un objeto maligno creado por Sauron. Con la ayuda de un grupo de
-                    aliados —la Comunidad del Anillo— emprende un viaje para destruirlo en los fuegos del Monte del
-                    Destino.</p>
-                <h5>Las Dos Torres</h5>
-                <p>La Comunidad se ha disuelto: Frodo y Sam continúan hacia Mordor, mientras Aragorn, Legolas y Gimli
-                    buscan rescatar a sus amigos capturados. La guerra se extiende por la Tierra Media y surge el
-                    conflicto entre el bien y el mal.</p>
-                <h5>El Retorno del Rey</h5>
-                <p>Las fuerzas de Sauron lanzan su ataque final sobre Gondor. Mientras Frodo y Sam luchan por llegar al
-                    Monte del Destino, Aragorn asume su destino como rey. Culmina la guerra del Anillo y se cierra la
-                    Tercera Edad.</p>
-
+            <h2 class="text-secondary">El señor de los anillos</h2>
+            <h5>La Comunidad del Anillo</h5>
+            <p>Frodo hereda el Anillo Único, un objeto maligno creado por Sauron. Con la ayuda de un grupo de
+                aliados —la Comunidad del Anillo— emprende un viaje para destruirlo en los fuegos del Monte del
+                Destino.</p>
+            <h5>Las Dos Torres</h5>
+            <p>La Comunidad se ha disuelto: Frodo y Sam continúan hacia Mordor, mientras Aragorn, Legolas y Gimli
+                buscan rescatar a sus amigos capturados. La guerra se extiende por la Tierra Media y surge el
+                conflicto entre el bien y el mal.</p>
+            <h5>El Retorno del Rey</h5>
+            <p>Las fuerzas de Sauron lanzan su ataque final sobre Gondor. Mientras Frodo y Sam luchan por llegar al
+                Monte del Destino, Aragorn asume su destino como rey. Culmina la guerra del Anillo y se cierra la
+                Tercera Edad.</p>
         </div>
     </section>
 
-    <!-- ==================== SECCIÓN ==================== -->
     <section id="Legendarium" class="container my-5">
         <div class="p-5 bg-light rounded-3 shadow">
-            <h2 class="text-warning">Legendarium</h2>
+            <h2 class="text-secondary">Legendarium</h2>
             <h5>El Silmarillion</h5>
             <p>Relata la creación del mundo (Eä) y las grandes historias de la Primera Edad, cuando los elfos luchan
                 contra Morgoth por los Silmarils, tres joyas sagradas. Es la base mítica del universo de Tolkien.</p>
@@ -151,10 +138,9 @@
         </div>
     </section>
 
-    <!-- ==================== SECCIÓN ==================== -->
     <section id="Poesia" class="container my-5">
         <div class="p-5 bg-light rounded-3 shadow">
-            <h2 class="text-danger">Poesía</h2>
+            <h2 class="text-secondary">Poesía</h2>
             <h5>Las aventuras de Tom Bombadil</h5>
             <p>Colección de poemas ambientados en la Tierra Media. Incluye versos sobre Tom Bombadil, criaturas del
                 Bosque Viejo y otros personajes. Combina humor, misterio y la musicalidad característica del mundo de
@@ -171,16 +157,18 @@
     </section>
 
     <!-- ==================== FOOTER (fijo abajo) ==================== -->
-    <!-- 
-    Mantiene el pie de página visible siempre al fondo.
-    Tiene fondo negro y texto blanco centrado.
-  -->
     <footer class="bg-dark text-white text-center py-3 fixed-bottom">
         <p class="mb-0">&copy; 2025 Marcelo Castillo</p>
     </footer>
 
-    <!-- Bootstrap JS para los componentes interactivos -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!-- Script para animación de carga de imagen -->
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.hero-image').classList.add('loaded');
+        });
+    </script>
+</body>
 </html>
